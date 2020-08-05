@@ -1,0 +1,34 @@
+:root {
+    --columns-row: 16;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+}
+
+body {
+    margin: 0;
+    width: 100%;
+}
+
+#container {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(var(--columns-row), 1fr);
+    grid-template-rows: repeat(var(--columns-row), 1fr);
+}
+
+.cells {
+    border: 0.5px solid black;
+}
+
+input {
+    height: 30px;
+    width: 50px;
+    padding: 0;
+}
