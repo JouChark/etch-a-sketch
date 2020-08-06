@@ -2,33 +2,56 @@
     --columns-row: 100;
 }
 
-header {
-    display: flex;
-    justify-content: center;
-    margin: 10px;
+body {
+    background-color: whitesmoke;
 }
 
-body {
-    margin: 0;
-    width: 100%;
+header {
+    width: 600px;
+    margin: 0 auto 0 auto;
+    padding: 15px 0;
+    background-color: aquamarine;
+    box-shadow: 0 0 7px 1px #cecece;
+    text-align: center;
+    font-size: 0.7em;
 }
 
 #container {
-    position: relative;
-    width: 500px;
-    height: 500px;
-    margin: auto;
+    width: 600px;
+    height: 600px;
+    margin: 0 auto 10px auto;
     display: grid;
     grid-template-columns: repeat(var(--columns-row), 1fr);
     grid-template-rows: repeat(var(--columns-row), 1fr);
+    background-color: white;
+    box-shadow: 0 0 7px 1px #cecece;
 }
 /*
 .cells {
     border: 0.5px solid black;
 }
 */
+
+button {
+    width: 100px;
+    height: 35px;
+    margin: 0 10px;
+}
+
 input {
-    height: 30px;
-    width: 50px;
+    height: 35px;
     padding: 0;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#gridSize {
+    width: 70px;
+
+}
+
+#color {
+    width: 100px;
+    vertical-align: bottom;
+    border: none;
 }
