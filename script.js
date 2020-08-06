@@ -1,10 +1,10 @@
-let container = document.querySelector('#container'),
-    gridSize;
+let container = document.querySelector('#container');
+let colorButton = document.querySelector('#color');
 
 window.addEventListener('load', function() {
-    defaultValues()
+    defaultValues();
     makeGrid(100);
-    paint('black');
+    paint(colorButton.value);
 });
 
 function makeGrid(n) {
@@ -16,32 +16,37 @@ function makeGrid(n) {
 };
 
 function paint(color) {
-    container.addEventListener('mouseover', function(e) {
-        e.target.style.backgroundColor = color;
-    }) 
+    if (color === 'randomColor') {
+        container.addEventListener('mouseover', function(e) {
+            e.target.style.backgroundColor = getRandomColor();
+        }) 
+    } else {
+        container.addEventListener('mouseover', function(e) {
+            e.target.style.backgroundColor = color;
+        }) 
+    }
 };
+
+let resetButton = document.querySelector('#resetButton')
+resetButton.addEventListener('click', function() {
+    defaultValues();
+    columnsRows(100);
+    removeGrid();
+    makeGrid(100);
+    paint(colorButton.value);
+});
 
 let gridSizeButton = document.querySelector('#gridSize');
-
-function selectGridSize() {
-    gridSize = (gridSizeButton.value - 110) * -1;
-    columnsRows(gridSize);
-    makeGrid(gridSize);
-};
-
 gridSizeButton.addEventListener('click', function() {
     removeGrid();
     selectGridSize(gridSizeButton.value);
 });
 
-let resetButton = document.querySelector('#resetButton')
-resetButton.addEventListener('click', function() {
-    defaultValues()
-    columnsRows(100);
-    removeGrid();
-    makeGrid(100);
-    paint('black');
-});
+function selectGridSize(value) {
+    let gridSize = (value - 110) * -1;
+    columnsRows(gridSize);
+    makeGrid(gridSize);
+};
 
 function removeGrid() {
     while (container.lastElementChild) {
@@ -49,16 +54,28 @@ function removeGrid() {
     }
 };
 
-let colorButton = document.querySelector('#color');
-colorButton.addEventListener('change', function() {
-    paint(colorButton.value);
-});
-
 function defaultValues() {
-    document.getElementById('color').value = 'black'
-    document.getElementById('gridSize').value = '10'
-}
+    document.getElementById('color').value = 'black';
+    document.getElementById('gridSize').value = '10';
+};
 
 function columnsRows(n) {
     document.documentElement.style.setProperty('--columns-row', n);
-}
+};
+
+colorButton.addEventListener('click', function() {
+        paint(colorButton.value)
+});
+
+let randomButton = document.querySelector('#random');
+randomButton.addEventListener('click', function() {
+    paint('randomColor')
+})
+
+function getRandomColor() {
+    let randomColor = [];
+        for (i = 0; i < 3; i++) {
+            randomColor.push(Math.floor(Math.random() * 256));
+        }
+        return  `rgb(${randomColor})`;
+};
