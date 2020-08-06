@@ -64,12 +64,16 @@ function columnsRows(n) {
 };
 
 colorButton.addEventListener('click', function() {
-        paint(colorButton.value)
+        paint(colorButton.value);
+});
+
+colorButton.addEventListener('change', function() {
+    paint(colorButton.value);
 });
 
 let randomButton = document.querySelector('#random');
 randomButton.addEventListener('click', function() {
-    paint('randomColor')
+    paint('randomColor');
 })
 
 function getRandomColor() {
