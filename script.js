@@ -3,7 +3,7 @@ let container = document.querySelector('#container'),
 
 window.addEventListener('load', function() {
     defaultValues()
-    makeGrid(16);
+    makeGrid(100);
     paint('black');
 });
 
@@ -24,7 +24,7 @@ function paint(color) {
 let gridSizeButton = document.querySelector('#gridSize');
 
 function selectGridSize() {
-    gridSize = gridSizeButton.value;
+    gridSize = (gridSizeButton.value - 110) * -1;
     columnsRows(gridSize);
     makeGrid(gridSize);
 };
@@ -37,9 +37,9 @@ gridSizeButton.addEventListener('click', function() {
 let resetButton = document.querySelector('#resetButton')
 resetButton.addEventListener('click', function() {
     defaultValues()
-    columnsRows(16);
+    columnsRows(100);
     removeGrid();
-    makeGrid(16);
+    makeGrid(100);
     paint('black');
 });
 
@@ -56,7 +56,7 @@ colorButton.addEventListener('change', function() {
 
 function defaultValues() {
     document.getElementById('color').value = 'black'
-    document.getElementById('gridSize').value = '16'
+    document.getElementById('gridSize').value = '10'
 }
 
 function columnsRows(n) {
