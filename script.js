@@ -27,8 +27,8 @@ function paint(color) {
     }
 };
 
-let resetButton = document.querySelector('#resetButton')
-resetButton.addEventListener('click', function() {
+let defaultButton = document.querySelector('#defaultButton')
+defaultButton.addEventListener('click', function() {
     defaultValues();
     columnsRows(100);
     removeGrid();
@@ -43,7 +43,7 @@ gridSizeButton.addEventListener('click', function() {
 });
 
 function selectGridSize(value) {
-    let gridSize = (value - 110) * -1;
+    let gridSize = (value - 11) * -10;
     columnsRows(gridSize);
     makeGrid(gridSize);
 };
@@ -56,7 +56,7 @@ function removeGrid() {
 
 function defaultValues() {
     document.getElementById('color').value = 'black';
-    document.getElementById('gridSize').value = '10';
+    document.getElementById('gridSize').value = '1';
 };
 
 function columnsRows(n) {
