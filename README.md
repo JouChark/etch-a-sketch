@@ -4,4 +4,4 @@
 
   Made with JavaScript, HTML and CSS.
 
-  Can be seen [here](https://jouchark.github.io/etch-a-sketch/)
+  Can be seen [here](https://uauramenezes.github.io/etch-a-sketch)
