@@ -1,7 +1,15 @@
 # etch-a-sketch
+A kind of sketchpad project for the [Odin Project curriculum](https://www.theodinproject.com/courses/web-development-101/lessons/etch-a-sketch-project).
 
-  A kind of sketchpad project for the [Odin Project curriculum](https://www.theodinproject.com/courses/web-development-101/lessons/etch-a-sketch-project).
+## Site
+Can be seen [here](https://uauramenezes.github.io/etch-a-sketch)
 
-  Made with JavaScript, HTML and CSS.
+## Built with
+* JavaScript
+* HTML
+* CSS
 
-  Can be seen [here](https://uauramenezes.github.io/etch-a-sketch)
+## About
+The objective of this project was to improve the fundamentals of web development.
+
+It uses JavaScript concepts like loops and enhances the use of DOM manipulation and event listeners. Furthermore, it also uses CSS concepts like grids.
